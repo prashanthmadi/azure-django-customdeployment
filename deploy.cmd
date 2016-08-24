@@ -94,7 +94,7 @@ IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
 IF NOT EXIST "%DEPLOYMENT_TARGET%\requirements.txt" goto postPython
 
 echo Detected requirements.txt.
-
+pushd "%DEPLOYMENT_TARGET%"
 :: 2. Install packages
 echo Pip install requirements.
 D:\home\Python27\python.exe -m pip install --upgrade -r requirements.txt
